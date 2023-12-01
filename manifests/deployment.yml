@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: microserviceaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microserviceaks
+  template:
+    metadata:
+      labels:
+        app: microserviceaks 
+    spec:
+      containers:
+        - name: microserviceaks 
+          image: aksproject2.azurecr.io/microserviceaks
+          ports:
+          - containerPort: 8045
